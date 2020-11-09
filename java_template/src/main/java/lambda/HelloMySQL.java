@@ -72,7 +72,6 @@ public class HelloMySQL implements RequestHandler<Request, HashMap<String, Objec
             LinkedList<String> ll = new LinkedList<String>();
             while (rs.next())
             {
-                logger.log("reading row");
                 logger.log("name=" + rs.getString("name"));
                 ll.add(rs.getString("name"));
                 logger.log("col2=" + rs.getString("col2"));
@@ -81,7 +80,6 @@ public class HelloMySQL implements RequestHandler<Request, HashMap<String, Objec
             rs.close();
             con.close();
             r.setNames(ll);
-            logger.log("r=" + r.toString());
         } 
         catch (Exception e) 
         {
